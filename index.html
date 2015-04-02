@@ -1,16 +1,38 @@
-<html>
+<!DOCTYPE html>
 <head>
-    <title>Howdy Duty</title>
+  <title>Monroe Family</title>
+  <style>
+    body {
+      text-align: center;
+      background: url("https://farm4.staticflickr.com/3939/15474680031_20e7f5440f_b.jpg");
+      background-size: cover;
+      background-position: center;
+      color: white;
+      font-family: helvetica;
+    }
+    p {
+      font-size: 22px;
+    }
+    input {
+      border: 0;
+      padding: 10px;
+      font-size: 18px;
+    }
+    input[type="submit"] {
+      background: red;
+      color: white;
+    }
+    #hippo {
+      max-width: 25%;
+      border: 7px solid blue;
+      border-radius: 20px;
+}
+    
+  </style>
 </head>
-<body style="margin: 0px;">
-	<canvas id="canvas">
-	</canvas>
-	<script>
-		var canvas = document.getElementById("canvas");
-		// get the 2D drawing context
-		var c = canvas.getContext("2d");
-		var x = 0, y = 0, width =10, height = 10;
-		c.fillRect(x, y, width, height);
-	</script>
+<body>
+  <img id="hippo" src="https://dl.dropboxusercontent.com/s/42bk7jhf6by0ric/WWMGravitar.jpg">
+  <p>What's up Monroes!</p>
+  <input type="email" placeholder="Your email">
+  <input type="submit">
 </body>
-</html>
