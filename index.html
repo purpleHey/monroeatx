@@ -1,38 +1,90 @@
 <!DOCTYPE html>
+<html lang="en">
+
 <head>
-  <title>Monroe Family</title>
-  <style>
-    body {
-      text-align: center;
-      background: url("https://farm4.staticflickr.com/3939/15474680031_20e7f5440f_b.jpg");
-      background-size: cover;
-      background-position: center;
-      color: white;
-      font-family: helvetica;
-    }
-    p {
-      font-size: 22px;
-    }
-    input {
-      border: 0;
-      padding: 10px;
-      font-size: 18px;
-    }
-    input[type="submit"] {
-      background: red;
-      color: white;
-    }
-    #hippo {
-      max-width: 25%;
-      border: 7px solid blue;
-      border-radius: 20px;
-}
-    
-  </style>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>PurpleHey - 'Cuse me while I think out loud</title>
+
+  <!-- Bootstrap Core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link href="css/simple-sidebar.css" rel="stylesheet">
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+  <link href="css/style.css" rel="stylesheet">
 </head>
+
 <body>
-  <img id="hippo" src="https://dl.dropboxusercontent.com/s/42bk7jhf6by0ric/WWMGravitar.jpg">
-  <p>What's up Monroes!</p>
-  <input type="email" placeholder="Your email">
-  <input type="submit">
+
+  <div id="wrapper">
+
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+        <div>
+          <img id="hippo" src="https://dl.dropboxusercontent.com/s/42bk7jhf6by0ric/WWMGravitar.jpg">
+        </div>
+        <ul class="sidebar-nav">
+          <li class="sidebar-brand">
+            <a class="active" href="#home">
+                W. Wesley Monroe
+            </a>
+          </li>
+          <li>
+              <a href="#blog">Blog</a>
+          </li>
+          <li>
+              <a href="#about">About</a>
+          </li>
+          <li>
+              <a href="#contact">Contact</a>
+          </li>
+          <li>
+              <a href="#medium">Medium</a>
+          </li>
+          <li>
+              <a href="https://twitter.com/purplehey">@purpleHey</a>
+          </li>
+        </ul>
+    </div>
+    <!-- /#sidebar-wrapper -->
+
+      <!-- Page Content -->
+      <div id="page-content-wrapper">
+          <!-- content to go here -->
+
+      </div>
+      <!-- /#page-content-wrapper -->
+
+  </div>
+  <!-- /#wrapper -->
+  <!-- jQuery -->
+  <script src="js/jquery.js"></script>
+
+  <!-- Bootstrap Core JavaScript -->
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/app.js"></script>
+
+  <!-- Menu Toggle Script -->
+  <script>
+  $("#menu-toggle").click(function(e) {
+      e.preventDefault();
+      $("#wrapper").toggleClass("toggled");
+  });
+  </script>
+
 </body>
+
+</html>

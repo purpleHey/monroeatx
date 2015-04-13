@@ -1,0 +1,21 @@
+#about {
+    text-align: center;
+    background: url("../images/TowardsTaos14.jpg");
+    background-size: cover;
+    background-position: center;
+    color: white;
+    font-family: helvetica;
+
+}
+
+#hippo {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+  max-width: 50%;
+  border: 2px solid red;
+  border-radius: 20px;
+}
+
+
