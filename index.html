@@ -77,8 +77,16 @@
   </div>
 
    <!-- /.navbar -->
+
   <!-- jQuery -->
   <script src="js/jquery.js"></script>
+
+  <script>
+  $("#menu-toggle").click(function(e) {
+      e.preventDefault();
+      $("#wrapper").toggleClass("toggled");
+  });
+  </script>
 
   <!-- Bootstrap Core JavaScript -->
   <script src="js/bootstrap.min.js"></script>
