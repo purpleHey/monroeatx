@@ -13,6 +13,9 @@ $(function() {
 	function updateNavigation(selectedNavItem) {
 		links.removeClass('active');
 		selectedNavItem.addClass('active');
+		if (mainContentArea.width() < 768) {
+			$("#wrapper").toggleClass("toggled");
+		}
 	}
 
 	function onclick_link (e) {
