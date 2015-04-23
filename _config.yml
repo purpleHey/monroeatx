@@ -1,0 +1,10 @@
+name: PurpleHey
+description: "'scuse me While I think out loud..."
+
+url: "http://localhost:4000"
+
+paginate: 10
+
+markdown: rdiscount
+permalink: pretty
+highlighter: pygments
