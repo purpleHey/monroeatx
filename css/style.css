@@ -50,10 +50,10 @@
 .carousel-caption {
   max-width: 700px;
   position: absolute;
-  left: 50%;
-  top: 50%;
+  left: 10%;
+  top: 10%;
 }
-  .carousel-caption h2  {
+  .carousel-caption h3  {
     color: #fff8de;
     background-color: rgba(0,0,0,0.5);
     padding: 10px 5px;
@@ -62,8 +62,10 @@
     margin-bottom: 12px;
   }
   .carousel-caption p {
+    color: #fff8de;
     width: 400px;
-    color: #b2b2b2;
+    background-color: rgba(0,0,0,0.5);
+    /*color: #b2b2b2;*/
   }
   .carousel-caption a {
     color: #b2b2b2;
@@ -72,33 +74,3 @@
 
 /* Slide 1 */
 /*#slide-1 .bcg {background-image:url('../img/bcg_slide-1.jpg')}*/
-#slide-1 .carousel-caption {
-  bottom: 200px;
-  top: auto;
-}
-
-/* Slide 2 */
-/*#slide-2 .bcg {background-image:url('../img/bcg_slide-2.jpg')}*/
-#slide-2 .carousel-caption {
-  margin-left: -450px;
-  margin-top: 50px;
-  /*bottom: 200px;*/
-  top: auto;
-}
-
-/* Slide 3 */
-/*#slide-3 .bcg {background-image:url('../img/bcg_slide-3.jpg')}*/
-#slide-3 .carousel-caption {
-  margin-left: -239px;
-}
-  #slide-3 h2 {
-    color: #f2ead6;
-    background-color: rgba(0,0,0,0.6);
-  }
-
-/* Slide 4 */
-/*#slide-4 .bcg {background-image:url('../img/bcg_slide-4.jpg')}*/
-#slide-4 .carousel-caption {
-  margin-left: -450px;
-}
-
