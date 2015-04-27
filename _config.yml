@@ -9,7 +9,7 @@ markdown: rdiscount
 permalink: :title
 highlighter: pygments
 
-image: /images/frontPorch.jpg
+image: /assets/frontPorch.jpg
 
 gems:
   - jekyll-auto-image
