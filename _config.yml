@@ -8,3 +8,8 @@ paginate: 10
 markdown: rdiscount
 permalink: :title
 highlighter: pygments
+
+image: /images/frontPorch.jpg
+
+gems:
+  - jekyll-auto-image
