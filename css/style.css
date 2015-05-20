@@ -1,13 +1,3 @@
-#about {
-    text-align: center;
-    background: url("/assets/TowardsTaos14.jpg");
-    background-size: cover;
-    background-position: center;
-    color: white;
-    font-family: helvetica;
-
-}
-
 .navbar {
   margin-bottom: 0;
 }
