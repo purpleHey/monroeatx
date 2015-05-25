@@ -8,7 +8,7 @@ layout: default
 			<h2>{{ post.title }}</h2>
 	    <h4>{{ post.date | date_to_long_string }}</h4>
 	    <img src="{{ post.image }}", class="img-responsive" align="left", width=250, height=100%, style="padding-right: 20px">
-	    {{ post.excerpt | strip_html | truncatewords: 50 }}
+	    {{ post.excerpt | truncatewords: 50 }}
 	    <p>
 	      <a href="{{ post.url }}">Read Post</a>
 	    </p>

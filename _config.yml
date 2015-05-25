@@ -9,6 +9,8 @@ markdown: rdiscount
 permalink: :title
 highlighter: pygments
 
+excerpt_separator: <!--more-->  # you can specify your own separator, of course.
+
 image: /assets/frontPorch.jpg
 
 gems:
