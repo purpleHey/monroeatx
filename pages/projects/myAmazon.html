@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MyAmazon</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <style type="text/css">
+  .item{
+    background-color: red;
+    margin: 10px;
+    }
+  </style>
+  </head>
+  <body>
+  	<div class="container">
+  		<nav class="navbar navbar-default">
+  			<div class="container-fluid" style="padding-top:5px">
+  				<ul class="nav navbar-nav">
+					<!-- <form class="navbar-form navbar-left" role="search"> -->
+					  <li>
+					   	<input type="text" class="form-control" id="nameField" placeholder="Book Title" onkeyup="filterName(event)">
+					  </li>
+					  <li>
+					    <input type="text" class="form-control" id="priceField" placeholder="Price" onkeyup="filterPrice(event)">
+					  </li>
+						<li class="dropdown dropdown-menu-right">
+							<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"	 data-toggle="dropdown" aria-expanded="true">
+						  Category
+						  <span class="caret"></span>
+							</button>
+								<ul class="dropdown-menu" id="ddMenu" role="menu" aria-labelledby="dropdownMenu1">
+								</ul>
+						</li>
+					<!-- </form> -->
+				</ul>
+				</div>
+			</nav>
+		</div>
+<div id="item-list">
+  	
+  </div>
+  <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="http://underscorejs.org/underscore-min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <script type="text/javascript">
+
+var items = [
+	{
+	  name: "All the Light we Cannot See",
+	  image: "http://ecx.images-amazon.com/images/I/51MfO0a70ZL._AA160_.jpg",
+	  price: 13.99,
+	  category: "book",
+	  keywords: ["adventure", "adult", "fiction"]
+	},
+	{
+	  name: "The Sixth Extinction",
+	  image: "http://ecx.images-amazon.com/images/I/51p8zorp0WL._AA160_.jpg",
+	  price: 9.99,
+	  category: "book",
+	  keywords: ["adventure", "kids", "biography"]
+	},
+	{
+	  name: "The Emperor of All Maladies",
+	  image: "http://ecx.images-amazon.com/images/I/5110GhoY65L._AA160_.jpg",
+	  price: 11.39,
+	  category: "book",
+	  keywords: ["adventure", "kids", "biography"]
+	}
+];
+
+function createDropDown() {
+
+	var newArray = [];
+	var newArray2 = [];
+	// need to map over lists, and merge onto a new list
+	var kwList = _.map(items, function(item, current) {
+			newArray = newArray.concat(item.keywords);
+	});
+	newArray2 = _.uniq(newArray);
+	var ddMenu = $('#ddMenu');
+	var menuItems;
+	for(i = 0; i < newArray2.length; i++) {
+		var anchor = $('<a role="menuitem" tabindex="-1" class="dropdown-item" href="#">').text(newArray2[i]);
+		var junk = $('<li role="presentation">').add(anchor);
+		ddMenu.append(junk);
+	}
+		// ddMenu.html(menuitem);
+    // <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
+}
+createDropDown();
+// console.log(kwList);
+function renderItems(itemsList) {
+	var containerElement = $('#item-list');
+
+	containerElement.html($.map(itemsList, function(item){
+		var formatedItem = $('<div class="item">').text(item.name + ": " + item.price);
+		var formattedImage = $('<img>').attr("src",item.image);
+		formattedImage.css("opacity",0.25);
+		formattedImage.animate({
+			opacity: 1.0,
+		}, 4000, function(){
+		});
+		var formattedCategory = $('<span class="label label-success">').text(item.category);
+		var formattedKeyWords = $('<div>');
+		formattedKeyWords.html($.map(item.keywords, function(keyword) {
+			return $('<span class="label label-info" style="margin:5px">').text(keyword);
+		}));
+	  return formatedItem.add(formattedImage).add(formattedCategory).add(formattedKeyWords);
+	}));
+}
+function filterKeyword(event) {
+
+	var searchKeyword = $(this).text();
+
+ 		// console.log(String.fromCharCode(event.keyCode));
+ 	var filteredItems = items.filter(function(item) {
+ 		for(var i = 0; i < item.keywords.length; i++) {
+ 			if(item.keywords[i].indexOf(searchKeyword) !== -1) {
+ 				return true;
+ 			}
+ 		}
+ 		});
+ 	// var filteredItems = items.filter(function(item) { item.name.indexOf(test) });
+
+ 	renderItems(filteredItems);
+}
+
+function filterName(event) {
+	var test = $("#nameField").val();
+	var regExStr = new RegExp(test, "i");
+ 		// console.log(String.fromCharCode(event.keyCode));
+ 	var filteredItems = items.filter(function(item) {
+ 		return item.name.search(regExStr) !== -1;
+ 		// return item.name.indexOf(test) !== -1;
+ 		});
+ 	// var filteredItems = items.filter(function(item) { item.name.indexOf(test) });
+
+ 	renderItems(filteredItems);
+}
+function filterPrice(event) {
+	var price = $("#priceField").val();
+ 	console.log(price);
+ 		// console.log(String.fromCharCode(event.keyCode));
+ 	var filteredItems = items.filter(function(item) {
+ 		return item.price < price;
+ 		});
+ 	// var filteredItems = items.filter(function(item) { item.name.indexOf(test) });
+
+ 	renderItems(filteredItems);
+}
+
+renderItems(items);
+
+	$('.dropdown-item').click(filterKeyword)
+  </script>
+  </body>
+</html>
